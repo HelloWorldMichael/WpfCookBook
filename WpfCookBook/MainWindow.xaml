@@ -4,7 +4,11 @@
         Title="MainWindow" Height="350" Width="525"
 		xmlns:JohnsonLib="http://johnsonlin.com"
 		xmlns:local="clr-namespace:CusDependencyProperty.Controls;assembly=CusDependencyProperty">
-	<StackPanel>
+
+	<!--Mapping xml namespace to .net namespce-->
+	<!--DependencyProperty-->
+
+	<!--<StackPanel>
 		<Button FontSize="20">
 			<JohnsonLib:PublicBook Author="Johnson Lin" Name="NamespaceDefinition.Book" Price="40.23" YearPublished="2014"/>
 		</Button>
@@ -14,5 +18,13 @@
 		<local:SimpleControl x:Name="simple"/>
 		<TextBlock Text="{Binding YearPublished, ElementName=simple}" FontSize="20"/>
 		<Button Content="Change Value" FontSize="20" Click="Button_Click"/>
-	</StackPanel>
+	</StackPanel>-->
+
+	<!--Attached Property-->
+	<Grid>
+		<Canvas>
+			<RepeatButton Grid.Row="1" Content="Move" Click="RepeatButton_Click"/>
+			<Rectangle x:Name="_rect" Width="50" Height="50" Fill="Red" Stroke="Black" StrokeThickness="5"	Canvas.Left="30" Canvas.Top="40" />
+		</Canvas>
+	</Grid>
 </Window>

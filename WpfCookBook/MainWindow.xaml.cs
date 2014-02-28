@@ -27,9 +27,14 @@ namespace WpfCookBook
 
 		private void Button_Click(object sender, RoutedEventArgs e)
 		{
-			simple.YearPublished++;
+			//simple.YearPublished++;
 		}
 
-		
+		private void RepeatButton_Click(object sender, RoutedEventArgs e)
+		{
+			Canvas.SetLeft(_rect, Canvas.GetLeft(_rect) + 5);
+		}
+
+
 	}
 }
