@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CusAttachedProperty;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,6 +21,7 @@ namespace WpfCookBook
 	/// </summary>
 	public partial class MainWindow : Window
 	{
+		Random random = new Random(360);
 		public MainWindow()
 		{
 			InitializeComponent();
@@ -32,7 +34,12 @@ namespace WpfCookBook
 
 		private void RepeatButton_Click(object sender, RoutedEventArgs e)
 		{
-			Canvas.SetLeft(_rect, Canvas.GetLeft(_rect) + 5);
+			//Canvas.SetLeft(_rect, Canvas.GetLeft(_rect) + 5);
+		}
+
+		private void Button_Click_1(object sender, RoutedEventArgs e)
+		{
+			RotationManager.SetAngle(_ellipse, random.Next(360));
 		}
 
 

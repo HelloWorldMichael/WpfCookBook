@@ -1,13 +1,15 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
-VisualStudioVersion = 12.0.30110.0
+VisualStudioVersion = 12.0.21005.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfCookBook", "WpfCookBook\WpfCookBook.csproj", "{16C1D8BE-77BA-4C98-A9CD-ECD11F76AF01}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NamespaceDefinition", "NamespaceDefinition\NamespaceDefinition.csproj", "{E04F5602-9655-48FB-A973-3205EC7FF3C9}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CusDependencyProperty", "CusDependencyProperty\CusDependencyProperty.csproj", "{F7CC6C44-9B4D-440D-93C7-74F36C7368F4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CusAttachedProperty", "CusAttachedProperty\CusAttachedProperty.csproj", "{095307A4-C520-457C-B793-CAE60D22EEED}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +29,10 @@ Global
 		{F7CC6C44-9B4D-440D-93C7-74F36C7368F4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F7CC6C44-9B4D-440D-93C7-74F36C7368F4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F7CC6C44-9B4D-440D-93C7-74F36C7368F4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{095307A4-C520-457C-B793-CAE60D22EEED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{095307A4-C520-457C-B793-CAE60D22EEED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{095307A4-C520-457C-B793-CAE60D22EEED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{095307A4-C520-457C-B793-CAE60D22EEED}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

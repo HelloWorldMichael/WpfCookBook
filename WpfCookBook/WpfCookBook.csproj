@@ -94,6 +94,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\CusAttachedProperty\CusAttachedProperty.csproj">
+      <Project>{095307a4-c520-457c-b793-cae60d22eeed}</Project>
+      <Name>CusAttachedProperty</Name>
+    </ProjectReference>
     <ProjectReference Include="..\CusDependencyProperty\CusDependencyProperty.csproj">
       <Project>{f7cc6c44-9b4d-440d-93c7-74f36c7368f4}</Project>
       <Name>CusDependencyProperty</Name>

@@ -3,7 +3,8 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="MainWindow" Height="350" Width="525"
 		xmlns:JohnsonLib="http://johnsonlin.com"
-		xmlns:local="clr-namespace:CusDependencyProperty.Controls;assembly=CusDependencyProperty">
+		xmlns:local="clr-namespace:CusDependencyProperty.Controls;assembly=CusDependencyProperty"
+		xmlns:cusAttachedPro="clr-namespace:CusAttachedProperty;assembly=CusAttachedProperty">
 
 	<!--Mapping xml namespace to .net namespce-->
 	<!--DependencyProperty-->
@@ -20,11 +21,23 @@
 		<Button Content="Change Value" FontSize="20" Click="Button_Click"/>
 	</StackPanel>-->
 
-	<!--Attached Property-->
-	<Grid>
+	<!--Using Attached Property-->
+	<!--<Grid>
 		<Canvas>
-			<RepeatButton Grid.Row="1" Content="Move" Click="RepeatButton_Click"/>
+			<RepeatButton Grid.Row="1" IsEnabled="False" Content="Move" Click="RepeatButton_Click" ToolTip="Move Rectangle to right." 
+						  ToolTipService.ShowOnDisabled="True"/>
 			<Rectangle x:Name="_rect" Width="50" Height="50" Fill="Red" Stroke="Black" StrokeThickness="5"	Canvas.Left="30" Canvas.Top="40" />
 		</Canvas>
-	</Grid>
+	</Grid>-->
+
+	<!--Custom Attached Property-->
+	<Canvas>
+		<Ellipse Fill="Red" Width="100" Height="60" x:Name="_ellipse" />
+		<!--cusAttachedPro:RotationManager.Angle="0.0"/>-->
+		<Rectangle Fill="Blue" Width="80" Height="80" Canvas.Left="100" Canvas.Top="100" />
+		<!--cusAttachedPro:RotationManager.Angle="30"/>-->
+		<Button Content="Hello" Canvas.Left="130" Canvas.Top="30" FontSize="20" Click="Button_Click_1"/>
+		<!--cusAttachedPro:RotationManager.Angle="90"/>-->
+	</Canvas>
+
 </Window>
