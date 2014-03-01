@@ -4,7 +4,8 @@
         Title="MainWindow" Height="350" Width="525"
 		xmlns:JohnsonLib="http://johnsonlin.com"
 		xmlns:local="clr-namespace:CusDependencyProperty.Controls;assembly=CusDependencyProperty"
-		xmlns:cusAttachedPro="clr-namespace:CusAttachedProperty;assembly=CusAttachedProperty">
+		xmlns:cusAttachedPro="clr-namespace:CusAttachedProperty;assembly=CusAttachedProperty"
+		xmlns:localExtension="clr-namespace:CusMarkupExtension;assembly=CusMarkupExtension">
 
 	<!--Mapping xml namespace to .net namespce-->
 	<!--DependencyProperty-->
@@ -31,13 +32,16 @@
 	</Grid>-->
 
 	<!--Custom Attached Property-->
-	<Canvas>
-		<Ellipse Fill="Red" Width="100" Height="60" x:Name="_ellipse" />
-		<!--cusAttachedPro:RotationManager.Angle="0.0"/>-->
-		<Rectangle Fill="Blue" Width="80" Height="80" Canvas.Left="100" Canvas.Top="100" />
-		<!--cusAttachedPro:RotationManager.Angle="30"/>-->
-		<Button Content="Hello" Canvas.Left="130" Canvas.Top="30" FontSize="20" Click="Button_Click_1"/>
-		<!--cusAttachedPro:RotationManager.Angle="90"/>-->
-	</Canvas>
+	<!--<Canvas>
+		<Ellipse Fill="Red" Width="100" Height="60" x:Name="_ellipse" cusAttachedPro:RotationManager.Angle="0.0"/>
+		<Rectangle Fill="Blue" Width="80" Height="80" Canvas.Left="100" Canvas.Top="100" cusAttachedPro:RotationManager.Angle="30"/>
+		<Button Content="Hello" Canvas.Left="130" Canvas.Top="30" FontSize="20" Click="Button_Click_1" cusAttachedPro:RotationManager.Angle="90"/>
+	</Canvas>-->
+
+
+	<!--Custom Markup Extension-->
+	<StackPanel>
+		<TextBlock Text="Hello World" FontSize="{localExtension:Random 2, 30, UseFractions=true}"/>
+	</StackPanel>
 
 </Window>

@@ -102,6 +102,10 @@
       <Project>{f7cc6c44-9b4d-440d-93c7-74f36c7368f4}</Project>
       <Name>CusDependencyProperty</Name>
     </ProjectReference>
+    <ProjectReference Include="..\CusMarkupExtension\CusMarkupExtension.csproj">
+      <Project>{6cb01a6d-3f81-4f3d-808d-513357c0ab85}</Project>
+      <Name>CusMarkupExtension</Name>
+    </ProjectReference>
     <ProjectReference Include="..\NamespaceDefinition\NamespaceDefinition.csproj">
       <Project>{e04f5602-9655-48fb-a973-3205ec7ff3c9}</Project>
       <Name>NamespaceDefinition</Name>

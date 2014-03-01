@@ -39,7 +39,7 @@ namespace WpfCookBook
 
 		private void Button_Click_1(object sender, RoutedEventArgs e)
 		{
-			RotationManager.SetAngle(_ellipse, random.Next(360));
+			//RotationManager.SetAngle(_ellipse, random.Next(360));
 		}
 
 
