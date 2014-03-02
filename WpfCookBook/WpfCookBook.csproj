@@ -110,6 +110,10 @@
       <Project>{e04f5602-9655-48fb-a973-3205ec7ff3c9}</Project>
       <Name>NamespaceDefinition</Name>
     </ProjectReference>
+    <ProjectReference Include="..\RoutedEvents\RoutedEvents.csproj">
+      <Project>{55e3c6ae-060d-4391-8a06-ccf7d94e47c8}</Project>
+      <Name>RoutedEvents</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

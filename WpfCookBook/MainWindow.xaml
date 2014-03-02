@@ -5,7 +5,8 @@
 		xmlns:JohnsonLib="http://johnsonlin.com"
 		xmlns:local="clr-namespace:CusDependencyProperty.Controls;assembly=CusDependencyProperty"
 		xmlns:cusAttachedPro="clr-namespace:CusAttachedProperty;assembly=CusAttachedProperty"
-		xmlns:localExtension="clr-namespace:CusMarkupExtension;assembly=CusMarkupExtension">
+		xmlns:localExtension="clr-namespace:CusMarkupExtension;assembly=CusMarkupExtension"
+		xmlns:localDraw="clr-namespace:RoutedEvents;assembly=RoutedEvents">
 
 	<!--Mapping xml namespace to .net namespce-->
 	<!--DependencyProperty-->
@@ -40,8 +41,13 @@
 
 
 	<!--Custom Markup Extension-->
-	<StackPanel>
+	<!--<StackPanel>
 		<TextBlock Text="Hello World" FontSize="{localExtension:Random 2, 30, UseFractions=true}"/>
-	</StackPanel>
+	</StackPanel>-->
+
+	<!--Routed Events-->
+	<Canvas>
+		<localDraw:SimpleDraw Height="299" Canvas.Left="10" Canvas.Top="10" Width="497"/>
+	</Canvas>
 
 </Window>
