@@ -10,6 +10,10 @@
 		</LinearGradientBrush>
 	</Window.Resources>
 
+	<Window.Background>
+		<ImageBrush ImageSource="Images/backgroud.jpg" />
+	</Window.Background>
+
 	<!--Using StaticResource & DynamicResource-->
 	<!--<StackPanel>
 	
@@ -24,7 +28,7 @@
 	</StackPanel>-->
 
 	<!--Using user-selected colors and fonts-->
-	<Grid>
+	<!--<Grid>
 		<Grid.RowDefinitions>
 			<RowDefinition />
 			<RowDefinition Height="Auto" />
@@ -32,5 +36,18 @@
 		<Rectangle Margin="10" Fill="{DynamicResource {x:Static SystemColors.DesktopBrushKey}}"/>
 		<TextBlock Grid.Row="1" Text="Hello from Active Caption Font" FontFamily="{DynamicResource {x:Static SystemFonts.CaptionFontFamilyKey}}" 
 				   FontSize="{DynamicResource {x:Static SystemFonts.CaptionFontSizeKey}}"/>
-	</Grid>
+	</Grid>-->
+
+	<!--Using binary resources: check Build Action and Copy to Output Directory via imgage's property-->
+	<StackPanel>
+
+		<Button Margin="10" HorizontalAlignment="Center" Padding="4">
+			<StackPanel Orientation="Horizontal">
+				<Image Source="Images/pink.jpg" Width="32" Height="32"/>
+				<TextBlock VerticalAlignment="Center" Margin="10,0,0,0" FontSize="16" Text="Click me, please!" />
+			</StackPanel>
+		</Button>
+
+	</StackPanel>
+	
 </Window>
