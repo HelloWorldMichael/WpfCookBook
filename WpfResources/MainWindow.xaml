@@ -1,0 +1,36 @@
+﻿<Window x:Class="WpfResources.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="350" Width="525">
+
+	<Window.Resources>
+		<LinearGradientBrush x:Key="brush1">
+			<GradientStop Offset="0" Color="Yellow" />
+			<GradientStop Offset="1" Color="Brown" />
+		</LinearGradientBrush>
+	</Window.Resources>
+
+	<!--Using StaticResource & DynamicResource-->
+	<!--<StackPanel>
+	
+		<Rectangle Height="100" Stroke="Black" Fill="{StaticResource brush1}"/>
+		<Ellipse StrokeThickness="20" Height="100" Stroke="{DynamicResource brush1}"/>
+		<StackPanel ButtonBase.Click="Button_Click">
+			<Button Content="Modify Resource" Name="modifyResource"/>
+			<Button Content="Remove Resource" Name="removeResource"/>
+			<Button Content="Replace Resource" Name="replaceResource"/>
+		</StackPanel>
+
+	</StackPanel>-->
+
+	<!--Using user-selected colors and fonts-->
+	<Grid>
+		<Grid.RowDefinitions>
+			<RowDefinition />
+			<RowDefinition Height="Auto" />
+		</Grid.RowDefinitions>
+		<Rectangle Margin="10" Fill="{DynamicResource {x:Static SystemColors.DesktopBrushKey}}"/>
+		<TextBlock Grid.Row="1" Text="Hello from Active Caption Font" FontFamily="{DynamicResource {x:Static SystemFonts.CaptionFontFamilyKey}}" 
+				   FontSize="{DynamicResource {x:Static SystemFonts.CaptionFontSizeKey}}"/>
+	</Grid>
+</Window>
