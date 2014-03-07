@@ -1,18 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
 using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+using System.Xml.Linq;
 
 namespace WpfResources
 {
@@ -52,6 +44,26 @@ namespace WpfResources
 			}
 			LinearGradientBrush brush12 = this.TryFindResource("brush1") as LinearGradientBrush;
 			Debug.WriteLine(string.Format("brush1 exists? {0}", brush12 == null ? "No" : "Yes"));
+		}
+
+		private void Button_Click_1(object sender, RoutedEventArgs e)
+		{
+			// If the resource has been marked with a Build Actionof Content, then the similar looking 
+			// Application.GetContentStreammethod should be used instead.	
+			var resource = Application.GetResourceStream(new Uri("books.xml", UriKind.Relative));
+
+			var books = from book in XElement.Load(resource.Stream).Elements("Book")
+						orderby (string)book.Attribute("Author")
+						select new
+						{
+							Name = book.Attribute("Name"),
+							Author = book.Attribute("Author")
+						};
+
+			foreach(var book in books)
+			{
+				_text.Text += book + Environment.NewLine;
+			}
 		}
 	}
 }

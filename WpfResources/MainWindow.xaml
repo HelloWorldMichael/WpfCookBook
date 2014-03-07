@@ -39,7 +39,7 @@
 	</Grid>-->
 
 	<!--Using binary resources: check Build Action and Copy to Output Directory via imgage's property-->
-	<StackPanel>
+	<!--<StackPanel>
 
 		<Button Margin="10" HorizontalAlignment="Center" Padding="4">
 			<StackPanel Orientation="Horizontal">
@@ -48,6 +48,17 @@
 			</StackPanel>
 		</Button>
 
-	</StackPanel>
+	</StackPanel>-->
 	
+	
+	<!--Accessing binary resources that different from images from C# code instead of accessing them in xmal-->
+	<Grid>
+		<Grid.RowDefinitions>
+			<RowDefinition Height="Auto" />
+			<RowDefinition />
+		</Grid.RowDefinitions>
+		<Button Content="Read Book Data" FontSize="14" Click="Button_Click_1"/>
+		<TextBox Grid.Row="1" IsReadOnly="True" x:Name="_text" FontSize="16" Margin="4"/>
+	</Grid>
+
 </Window>
