@@ -62,7 +62,7 @@ namespace WpfResources
 
 			foreach(var book in books)
 			{
-				_text.Text += book + Environment.NewLine;
+				//_text.Text += book + Environment.NewLine;
 			}
 		}
 	}

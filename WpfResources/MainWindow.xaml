@@ -3,17 +3,24 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="MainWindow" Height="350" Width="525">
 
-	<Window.Resources>
+	<!--<Window.Resources>
 		<LinearGradientBrush x:Key="brush1">
 			<GradientStop Offset="0" Color="Yellow" />
 			<GradientStop Offset="1" Color="Brown" />
 		</LinearGradientBrush>
-	</Window.Resources>
+	</Window.Resources>-->
 
+	<!--Using the image in the same assembly as the background-->
 	<Window.Background>
-		<ImageBrush ImageSource="Images/backgroud.jpg" />
+		<ImageBrush ImageSource="Images/background.jpg" />
 	</Window.Background>
 
+	<!--Using a image from a different assembly as the background-->
+	<!--WPF recognizes a pack URI to a referenced assembly in the form:/AssemblyReference;component/ResourceName-->
+	<!--<Window.Background>
+		<ImageBrush ImageSource="/BinaryResourceAccess;component/Images/background.jpg" />
+	</Window.Background>-->
+	
 	<!--Using StaticResource & DynamicResource-->
 	<!--<StackPanel>
 	
@@ -52,13 +59,17 @@
 	
 	
 	<!--Accessing binary resources that different from images from C# code instead of accessing them in xmal-->
-	<Grid>
+	<!--<Grid>
 		<Grid.RowDefinitions>
 			<RowDefinition Height="Auto" />
 			<RowDefinition />
 		</Grid.RowDefinitions>
 		<Button Content="Read Book Data" FontSize="14" Click="Button_Click_1"/>
 		<TextBox Grid.Row="1" IsReadOnly="True" x:Name="_text" FontSize="16" Margin="4"/>
+	</Grid>-->
+	
+	<Grid>
+		<Ellipse Fill="{StaticResource brush1}" />
 	</Grid>
 
 </Window>
