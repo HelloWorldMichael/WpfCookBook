@@ -19,6 +19,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfResources", "WpfResource
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BinaryResourceAccess", "BinaryResourceAccess\BinaryResourceAccess.csproj", "{C3C071BC-74FB-438C-8F09-DB2F119F96F1}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfLayouts", "WpfLayouts\WpfLayouts.csproj", "{6DA26FAF-D667-4638-968B-114D1CD0397D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -57,6 +59,10 @@ Global
 		{C3C071BC-74FB-438C-8F09-DB2F119F96F1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C3C071BC-74FB-438C-8F09-DB2F119F96F1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C3C071BC-74FB-438C-8F09-DB2F119F96F1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6DA26FAF-D667-4638-968B-114D1CD0397D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6DA26FAF-D667-4638-968B-114D1CD0397D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6DA26FAF-D667-4638-968B-114D1CD0397D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6DA26FAF-D667-4638-968B-114D1CD0397D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
