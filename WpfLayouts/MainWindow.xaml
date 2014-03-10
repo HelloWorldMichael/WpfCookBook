@@ -46,11 +46,18 @@
 		</ScrollViewer>-->
 
 		<!--Creating a border around panels and elements-->
-		<Border BorderThickness="5" BorderBrush="Blue" Margin="40" CornerRadius="10">
+		<!--<Border BorderThickness="5" BorderBrush="Blue" Margin="40" CornerRadius="10">
 			<StackPanel Margin="40">
 
 			</StackPanel>
-		</Border>
+		</Border>-->
+
+		<!--Exact positions in Canvas-->
+		<Canvas>
+			<Ellipse Stroke="Black" StrokeThickness="2" Fill="Red" Canvas.Right="50" Canvas.Top="40" Width="50" Height="50"/>
+			<TextBlock Text="Canvas Demo" FontSize="20" Canvas.Left="100" Canvas.Top="20" />
+			<Rectangle Stroke="Black" StrokeThickness="1" Fill="LightBlue" Canvas.Bottom="0" Canvas.Left="40" Width="30" Height="100" />
+		</Canvas>
 
 	</Grid>
 </Window>
