@@ -53,11 +53,56 @@
 		</Border>-->
 
 		<!--Exact positions in Canvas-->
-		<Canvas>
+		<!--<Canvas>
 			<Ellipse Stroke="Black" StrokeThickness="2" Fill="Red" Canvas.Right="50" Canvas.Top="40" Width="50" Height="50"/>
 			<TextBlock Text="Canvas Demo" FontSize="20" Canvas.Left="100" Canvas.Top="20" />
 			<Rectangle Stroke="Black" StrokeThickness="1" Fill="LightBlue" Canvas.Bottom="0" Canvas.Left="40" Width="30" Height="100" />
-		</Canvas>
+		</Canvas>-->
+
+		<!--Add elements to canvas dynamically-->
+		<!--<Canvas x:Name="_canvas" Background="White" MouseUp="OnClickCanvas">
+
+		</Canvas>-->
+
+		<!--Using tab control-->
+		<!--<TabControl>
+
+			<TabItem Header="Header 1">
+				<Grid>
+					<Ellipse Stroke="Black" Fill="Blue" StrokeThickness="4" Margin="10"/>
+					<TextBlock Text="Data 1" FontSize="30" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center" />
+				</Grid>
+			</TabItem>
+
+			<TabItem>
+				<TabItem.Header>
+					<StackPanel Orientation="Horizontal" Margin="2">
+						<Rectangle Stroke="Black" Fill="Red" StrokeThickness="2" Width="20" Height="20" />
+						<TextBlock Text="Header 2" Margin="4,0,0,0" VerticalAlignment="Center" />
+					</StackPanel>
+				</TabItem.Header>
+				<Grid>
+					<Rectangle Stroke="Black" Fill="Green" RadiusX="30" RadiusY="20" StrokeThickness="4" Margin="10"/>
+					<TextBlock Text="Data 2" FontSize="30" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center" />
+				</Grid>
+			</TabItem>
+
+		</TabControl>-->
+
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="2*"/>
+			<ColumnDefinition Width="40" />
+			<ColumnDefinition />
+		</Grid.ColumnDefinitions>
+		<Border BorderThickness="2" BorderBrush="Black">
+			<Canvas x:Name="_source" Background="White" MouseLeftButtonDown="OnBeginDrag" />
+		</Border>
+		<Border BorderBrush="Black" BorderThickness="2" Grid.Column="2" >
+			<!--To enable the WrapPanelto be a drag-and-drop target, set its AllowDropproperty to true.-->
+			<WrapPanel ItemWidth="50" ItemHeight="50" x:Name="_target" Background="Yellow" 
+					   AllowDrop="True" Drop="OnDrop" DragEnter="OnDragEnter" DragLeave="OnDragEnter" DragOver="OnDragEnter">
+			</WrapPanel>
+		</Border>
 
 	</Grid>
 </Window>
