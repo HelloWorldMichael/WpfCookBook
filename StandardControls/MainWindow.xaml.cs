@@ -27,7 +27,7 @@ namespace StandardControls
 
 		private void Button_Click(object sender, RoutedEventArgs e)
 		{
-			MessageBox.Show(string.Format("User: {0}, Comment:{1}{2}", _name.Text, Environment.NewLine, _comment.Text));
+			//MessageBox.Show(string.Format("User: {0}, Comment:{1}{2}", _name.Text, Environment.NewLine, _comment.Text));
 		}
 	}
 }

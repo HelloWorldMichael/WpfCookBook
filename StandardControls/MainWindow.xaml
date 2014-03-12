@@ -4,7 +4,7 @@
         Title="MainWindow" Height="350" Width="525" FontSize="15">
 	<Grid>
 
-		<Grid.RowDefinitions>
+		<!--<Grid.RowDefinitions>
 			<RowDefinition Height="Auto"/>
 			<RowDefinition Height="Auto"/>
 			<RowDefinition/>
@@ -17,15 +17,19 @@
 		</Grid.ColumnDefinitions>
 
 		<TextBlock FontSize="16" Text="User comment details" Margin="4" Grid.ColumnSpan="2" HorizontalAlignment="Center" />
+		-->
 		<!--It provides an access key feature. Any character in its Contentstring preceded by an underscore becomes an access key (with the Altkey). 
 		Pressing that access key (with Alt) causes the input focus to jump to the control designated by the Targetproperty.-->
+		<!--
 		<Label Content="_Name:" Grid.Row="1" Target="_name" />
 		<TextBox Grid.Row="1" Grid.Column="1" x:Name="_name" Margin="2"/>
 		<Label Content="_Comment:" Grid.Row="2" Target="_comment" />
 		<TextBox AcceptsReturn="True" Grid.Row="2" Grid.Column="1" x:Name="_comment" Margin="2"/>
+		-->
 		<!--<Button HorizontalAlignment="Center" Margin="4" Grid.Row="3" Grid.ColumnSpan="2" FontSize="16" Content="Submit Comment" Click="Button_Click"/>-->
 
 		<!--Using Inlines property of TextBlock-->
+		<!--
 		<TextBlock Grid.Row="3" Grid.ColumnSpan="2" HorizontalAlignment="Center">
 			<Run Foreground="Blue" Text="Hello TextBlock" />
 			<LineBreak />
@@ -33,6 +37,38 @@
 			<LineBreak />
 			<Run>Click the following link to go to search:</Run>
 			<Hyperlink>Search in Database</Hyperlink>
-		</TextBlock>
+		</TextBlock>-->
+
+		<!--Using Tooltips-->
+		<Grid.RowDefinitions>
+			<RowDefinition Height="Auto" />
+			<RowDefinition />
+		</Grid.RowDefinitions>
+
+		<ToolBar>
+			<Button Content="Copy" FontSize="16" Margin="4" Padding="4" Command="Copy" ToolTipService.ShowOnDisabled="True"
+					ToolTip="Copy the selected text to the clipboard"/>
+			<Button Content="Paste" FontSize="16" Margin="4" Padding="4" Command="Paste">
+				<Button.Resources>
+					<Style TargetType="ToolTip">
+						<Setter Property="Background" Value="Transparent" />
+						<Setter Property="BorderBrush" Value="Transparent" />
+					</Style>
+				</Button.Resources>
+				<Button.ToolTip>
+					<ToolTip>
+						<Border CornerRadius="10" BorderThickness="2" BorderBrush="Black" Padding="4" Background="LightBlue">
+							<Grid Width="120">
+								<TextBlock FontSize="15" TextWrapping="Wrap" Text="Paste text from the clipboard" />
+							</Grid>
+						</Border>
+					</ToolTip>
+				</Button.ToolTip>
+			</Button>
+		</ToolBar>
+
+		<TextBox TextWrapping="WrapWithOverflow" AcceptsReturn="True" Grid.Row="1" FontSize="14" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto"/>
+
+
 	</Grid>
 </Window>
