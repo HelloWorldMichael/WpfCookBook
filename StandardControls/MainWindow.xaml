@@ -40,7 +40,7 @@
 		</TextBlock>-->
 
 		<!--Using Tooltips-->
-		<Grid.RowDefinitions>
+		<!--<Grid.RowDefinitions>
 			<RowDefinition Height="Auto" />
 			<RowDefinition />
 		</Grid.RowDefinitions>
@@ -67,8 +67,39 @@
 			</Button>
 		</ToolBar>
 
-		<TextBox TextWrapping="WrapWithOverflow" AcceptsReturn="True" Grid.Row="1" FontSize="14" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto"/>
+		<TextBox TextWrapping="WrapWithOverflow" AcceptsReturn="True" Grid.Row="1" FontSize="14" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto"/>-->
 
+		<!--Using ComboBox and ContextMenu-->
+		<Grid.RowDefinitions>
+			<RowDefinition Height="Auto" />
+			<RowDefinition />
+		</Grid.RowDefinitions>
+
+		<ComboBox Margin="4" x:Name="_langCombo" SelectionChanged="OnLangChanged">
+			<ComboBoxItem>C++</ComboBoxItem>
+			<ComboBoxItem>C#</ComboBoxItem>
+			<ComboBoxItem>Visual Basic</ComboBoxItem>
+			<ComboBoxItem>F#</ComboBoxItem>
+		</ComboBox>
+
+		<GroupBox Header="Some Keywords" Grid.Row="1" Margin="4">
+			<ListBox x:Name="_keywordList" Margin="4">
+				<!--Creating a ContextMenu for ListBox-->
+				<ListBox.ContextMenu>
+					<ContextMenu>
+						<MenuItem Header="_Language" Click="OnChangeLanugage">
+							<MenuItem Header="C++" Tag="0" />
+							<MenuItem Header="C#" Tag="1" />
+							<MenuItem Header="Visual Basic" Tag="2" />
+							<MenuItem Header="F#" Tag="3" />
+						</MenuItem>
+						<Separator />
+						<MenuItem Header="_Save..." />
+						<MenuItem Header="_Load..." />
+					</ContextMenu>
+				</ListBox.ContextMenu>
+			</ListBox>
+		</GroupBox>
 
 	</Grid>
 </Window>
