@@ -70,7 +70,7 @@
 		<TextBox TextWrapping="WrapWithOverflow" AcceptsReturn="True" Grid.Row="1" FontSize="14" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto"/>-->
 
 		<!--Using ComboBox and ContextMenu-->
-		<Grid.RowDefinitions>
+		<!--<Grid.RowDefinitions>
 			<RowDefinition Height="Auto" />
 			<RowDefinition />
 		</Grid.RowDefinitions>
@@ -84,7 +84,7 @@
 
 		<GroupBox Header="Some Keywords" Grid.Row="1" Margin="4">
 			<ListBox x:Name="_keywordList" Margin="4">
-				<!--Creating a ContextMenu for ListBox-->
+				--><!--Creating a ContextMenu for ListBox--><!--
 				<ListBox.ContextMenu>
 					<ContextMenu>
 						<MenuItem Header="_Language" Click="OnChangeLanugage">
@@ -99,7 +99,35 @@
 					</ContextMenu>
 				</ListBox.ContextMenu>
 			</ListBox>
-		</GroupBox>
+		</GroupBox>-->
+		
+		<StackPanel>
+
+			<GroupBox Header="What kind of tea would you like?">
+				<StackPanel Margin="4" x:Name="_teaTypePanel">
+					<RadioButton IsChecked="True">
+						<StackPanel Orientation="Horizontal">
+							<Rectangle Stroke="Black" Fill="Yellow" Height="20" Width="20"/>
+							<TextBlock Text="Earl Grey"/>
+						</StackPanel>
+					</RadioButton>
+					<RadioButton Content="Mint" />
+					<RadioButton Content="Chinese Green" />
+					<RadioButton Content="Japanese Green" />
+				</StackPanel>
+			</GroupBox>
+
+			<GroupBox Header="Select tea supplements">
+				<StackPanel Margin="4">
+					<CheckBox Content="Sugar" x:Name="_isSugar" />
+					<CheckBox Content="Milk" x:Name="_isMilk" />
+					<CheckBox Content="Lemon" x:Name="_isLemon" />
+				</StackPanel>
+			</GroupBox>
+
+			<Button Content="Make Tea!" Margin="4" FontSize="20" HorizontalAlignment="Center" Padding="4" Click="OnMakeTea"/>
+
+		</StackPanel>
 
 	</Grid>
 </Window>
