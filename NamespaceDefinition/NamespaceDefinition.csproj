@@ -42,6 +42,8 @@
   <ItemGroup>
     <Compile Include="Books\PublicBook.cs" />
     <Compile Include="Contacts\CompanyContact.cs" />
+    <Compile Include="Contacts\Person.cs" />
+    <Compile Include="ObservableObject.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />

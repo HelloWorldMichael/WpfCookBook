@@ -1,0 +1,29 @@
+﻿<Window x:Class="WpfDataBindings.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="350" Width="525"
+		xmlns:JolinLib="http://johnsonlin.com">
+	<Grid>
+
+		<!--<Grid.RowDefinitions>
+			<RowDefinition />
+			<RowDefinition Height="Auto" />
+			<RowDefinition Height="Auto" />
+		</Grid.RowDefinitions>
+
+		--><!--Element to element binding-->
+		<!--Using RelativeSource as the binding source--><!--
+		<TextBlock Text="{Binding FontSize,RelativeSource={RelativeSource Self}}" TextAlignment="Center" VerticalAlignment="Center" FontSize="{Binding Path=Value, ElementName=_slider}"/>
+		<Slider x:Name="_slider" Grid.Row="1" Minimum="10" Maximum="80" Value="30"/>
+		<TextBox Grid.Row="2" Text="{Binding Path=Value, ElementName=_slider, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>-->
+
+		<!--Binding to a single object-->
+		<StackPanel>
+			<TextBlock Text="{Binding Name}" />
+			<TextBlock Text="{Binding Age}" />
+			<Button Content="Click Me" Click="OnChange"/>
+		</StackPanel>
+
+
+	</Grid>
+</Window>

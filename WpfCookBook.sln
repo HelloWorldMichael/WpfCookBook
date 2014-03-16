@@ -23,6 +23,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfLayouts", "WpfLayouts\Wp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StandardControls", "StandardControls\StandardControls.csproj", "{A08F12C1-F083-4C9F-B235-29E0B056AEBD}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfDataBindings", "WpfDataBindings\WpfDataBindings.csproj", "{8CA2F4E6-C663-40A3-94D8-01CEA75C92A9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -69,6 +71,10 @@ Global
 		{A08F12C1-F083-4C9F-B235-29E0B056AEBD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A08F12C1-F083-4C9F-B235-29E0B056AEBD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A08F12C1-F083-4C9F-B235-29E0B056AEBD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8CA2F4E6-C663-40A3-94D8-01CEA75C92A9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8CA2F4E6-C663-40A3-94D8-01CEA75C92A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8CA2F4E6-C663-40A3-94D8-01CEA75C92A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8CA2F4E6-C663-40A3-94D8-01CEA75C92A9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
