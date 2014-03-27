@@ -3,6 +3,16 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="MainWindow" Height="350" Width="525"
 		xmlns:JolinLib="http://johnsonlin.com">
+	<Window.Resources>
+		<DataTemplate DataType="{x:Type JolinLib:Person}">
+			<Border BorderBrush="Green" BorderThickness="2">
+				<StackPanel Margin="4">
+					<TextBlock Foreground="Red" FontSize="20" Text="{Binding Name}" TextAlignment="Center" />
+					<TextBlock FontSize="16" Text="{Binding Age}" TextAlignment="Right" />
+				</StackPanel>
+			</Border>
+		</DataTemplate>
+	</Window.Resources>
 	<Grid>
 
 		<!--<Grid.RowDefinitions>
@@ -11,19 +21,42 @@
 			<RowDefinition Height="Auto" />
 		</Grid.RowDefinitions>
 
-		--><!--Element to element binding-->
-		<!--Using RelativeSource as the binding source--><!--
+		-->
+		<!--Element to element binding-->
+		<!--Using RelativeSource as the binding source-->
+		<!--
 		<TextBlock Text="{Binding FontSize,RelativeSource={RelativeSource Self}}" TextAlignment="Center" VerticalAlignment="Center" FontSize="{Binding Path=Value, ElementName=_slider}"/>
 		<Slider x:Name="_slider" Grid.Row="1" Minimum="10" Maximum="80" Value="30"/>
 		<TextBox Grid.Row="2" Text="{Binding Path=Value, ElementName=_slider, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>-->
 
 		<!--Binding to a single object-->
-		<StackPanel>
+		<!--<StackPanel>
 			<TextBlock Text="{Binding Name}" />
 			<TextBlock Text="{Binding Age}" />
 			<Button Content="Click Me" Click="OnChange"/>
-		</StackPanel>
+		</StackPanel>-->
 
+		<!--Binding to a collection-->
+		<!--<Grid.RowDefinitions>
+			<RowDefinition />
+			<RowDefinition Height="Auto" />
+		</Grid.RowDefinitions>
 
+		<ListBox x:Name="_list" DisplayMemberPath="Name">
+		</ListBox>
+
+		<Button Content="Add" Grid.Row="1" Click="OnAdd"/>-->
+		
+		<!--Using DataTemplate-->
+		<Grid.RowDefinitions>
+			<RowDefinition Height="Auto"/>
+			<RowDefinition />
+		</Grid.RowDefinitions>
+
+		<Button Content="{Binding}"/>
+				
+		<ListBox Grid.Row="1" x:Name="_list">
+		</ListBox>
+		
 	</Grid>
 </Window>
