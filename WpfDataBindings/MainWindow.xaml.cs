@@ -1,5 +1,5 @@
 ﻿using System.Collections.Generic;
-using System.Collections.ObjectModel;
+using System.Diagnostics;
 using System.Windows;
 using NamespaceDefinition.Contacts;
 
@@ -29,13 +29,15 @@ namespace WpfDataBindings
 
 			//_list.ItemsSource = _people;
 
-			DataContext = new Person { Age = 10, Name = "Bart" };
-			_list.ItemsSource = new ObservableCollection<Person>
-			{
-				new Person { Name = "Bart", Age = 10 },
-				new Person { Name = "Homer", Age = 45 },
-				new Person { Name = "Marge", Age = 35 }
-			};
+			//DataContext = new Person { Age = 10, Name = "Bart" };
+			//_list.ItemsSource = new ObservableCollection<Person>
+			//{
+			//	new Person { Name = "Bart", Age = 10 },
+			//	new Person { Name = "Homer", Age = 45 },
+			//	new Person { Name = "Marge", Age = 35 }
+			//};
+
+			DataContext = Process.GetProcesses();
 		}
 
 		private void OnChange(object sender, RoutedEventArgs e)

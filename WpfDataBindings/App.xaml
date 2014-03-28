@@ -1,8 +1,29 @@
 ﻿<Application x:Class="WpfDataBindings.App"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             StartupUri="MainWindow.xaml">
-    <Application.Resources>
-         
-    </Application.Resources>
+             StartupUri="MainWindow.xaml"
+			 xmlns:JolinLib="http://johnsonlin.com">
+	<Application.Resources>
+		<ResourceDictionary>
+			
+			<DataTemplate x:Key="systemTemplate">
+				<Border Background="Red" BorderBrush="Black" BorderThickness="1" Margin="2" Padding="4">
+					<TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="16" Text="{Binding ProcessName}" />
+				</Border>
+			</DataTemplate>
+			
+			<DataTemplate x:Key="userTemplate">
+				<Border Background="White" BorderBrush="Blue" BorderThickness="1" Margin="2">
+					<StackPanel Orientation="Horizontal" TextBlock.FontSize="15" Margin="2">
+						<TextBlock Text="{Binding ProcessName}" />
+						<TextBlock Margin="10,0,0,0" Text="{Binding Id, StringFormat='ID: 0'}" />
+						<TextBlock Margin="10,0,0,0" Text="{Binding Threads.Count, StringFormat='Threads: 0'}" />
+					</StackPanel>
+				</Border>
+			</DataTemplate>
+
+			<JolinLib:ProcessTemplateSelector x:Key="_selector" SystemProcessTemplate="systemTemplate" UserProcessTemplate="userTemplate" />
+
+		</ResourceDictionary>
+	</Application.Resources>
 </Application>

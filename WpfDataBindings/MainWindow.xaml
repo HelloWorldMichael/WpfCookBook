@@ -46,9 +46,9 @@
 		</ListBox>
 
 		<Button Content="Add" Grid.Row="1" Click="OnAdd"/>-->
-		
+
 		<!--Using DataTemplate-->
-		<Grid.RowDefinitions>
+		<!--<Grid.RowDefinitions>
 			<RowDefinition Height="Auto"/>
 			<RowDefinition />
 		</Grid.RowDefinitions>
@@ -56,7 +56,10 @@
 		<Button Content="{Binding}"/>
 				
 		<ListBox Grid.Row="1" x:Name="_list">
-		</ListBox>
-		
+		</ListBox>-->
+
+		<!--Using Data template selectors-->
+		<ListBox HorizontalContentAlignment="Stretch" ItemsSource="{Binding}" ItemTemplateSelector="{StaticResource _selector}"/>
+
 	</Grid>
 </Window>
