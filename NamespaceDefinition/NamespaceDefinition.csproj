@@ -47,8 +47,13 @@
     <Compile Include="Contacts\CompanyContact.cs" />
     <Compile Include="Contacts\Person.cs" />
     <Compile Include="DataTemplateSelectors\ProcessTemplateSelector.cs" />
+    <Compile Include="ForecastData\Enum.cs" />
+    <Compile Include="ForecastData\Forecast.cs" />
+    <Compile Include="ForecastData\GeneralForecastToBrushConverter.cs" />
     <Compile Include="ObservableObject.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Sorting\SortField.cs" />
+    <Compile Include="Sorting\SortFieldList.cs" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

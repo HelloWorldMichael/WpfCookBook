@@ -38,3 +38,5 @@ using System.Windows.Markup;
 [assembly: XmlnsDefinition("http://johnsonlin.com", "NamespaceDefinition.Books")]
 [assembly: XmlnsDefinition("http://johnsonlin.com", "NamespaceDefinition.Contacts")]
 [assembly: XmlnsDefinition("http://johnsonlin.com", "NamespaceDefinition.DataTemplateSelectors")]
+[assembly: XmlnsDefinition("http://johnsonlin.com", "NamespaceDefinition.ForecastData")]
+[assembly: XmlnsDefinition("http://johnsonlin.com", "NamespaceDefinition.Sorting")]

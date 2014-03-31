@@ -24,6 +24,15 @@
 
 			<JolinLib:ProcessTemplateSelector x:Key="_selector" SystemProcessTemplate="systemTemplate" UserProcessTemplate="userTemplate" />
 
+			<JolinLib:GeneralForecastToBrushConverter x:Key="gf2brush"/>
+
+			<JolinLib:SortFieldList x:Key="sortFields">
+				<JolinLib:SortField DisplayName="(Unsorted)" />
+				<JolinLib:SortField DisplayName="Process Name" PropertyName="ProcessName" />
+				<JolinLib:SortField DisplayName="Process ID" PropertyName="Id" />
+				<JolinLib:SortField DisplayName="# Threads" PropertyName="Threads.Count" />
+			</JolinLib:SortFieldList>
+
 		</ResourceDictionary>
 	</Application.Resources>
 </Application>

@@ -59,7 +59,93 @@
 		</ListBox>-->
 
 		<!--Using Data template selectors-->
-		<ListBox HorizontalContentAlignment="Stretch" ItemsSource="{Binding}" ItemTemplateSelector="{StaticResource _selector}"/>
+		<!--<ListBox HorizontalContentAlignment="Stretch" ItemsSource="{Binding}" ItemTemplateSelector="{StaticResource _selector}"/>-->
+
+		<!--Using value converters-->
+		<!--<Grid.RowDefinitions>
+			<RowDefinition Height="Auto" />
+			<RowDefinition Height="Auto" />
+			<RowDefinition />
+		</Grid.RowDefinitions>
+
+		<StackPanel Orientation="Horizontal">
+			<TextBlock Text="Select number of days to forecast:" FontSize="15" VerticalAlignment="Center" Margin="4"/>
+			<ComboBox x:Name="_days" SelectedIndex="0" Width="50"/>
+			<Button Margin="4" Content="Get Forecast" FontSize="16" Click="OnGetForecast" />
+		</StackPanel>
+
+		<StackPanel Orientation="Horizontal" Grid.Row="1" Margin="4" TextBlock.FontSize="15">
+			<TextBlock Text="Select units:" Margin="4"/>
+			<RadioButton Content="Celsius" IsChecked="True" />
+			<RadioButton Content="Fahrenheit" Margin="20,4"/>
+		</StackPanel>
+		<ListBox ItemsSource="{Binding}" Grid.Row="2" HorizontalContentAlignment="Stretch">
+			<ListBox.ItemTemplate>
+				<DataTemplate>
+					<Border Margin="4" BorderBrush="Black" Padding="4" BorderThickness="2" Background="{Binding GeneralForecast, Converter={StaticResource gf2brush}}">
+						<StackPanel Orientation="Horizontal">
+							<TextBlock FontSize="20" FontWeight="Bold" Text="{Binding GeneralForecast}" />
+							<TextBlock FontSize="16" Margin="10,0,0,0" VerticalAlignment="Bottom" Text="{Binding TemperatureLow, StringFormat='Low: \{0:N2\}'}" />
+							<TextBlock FontSize="16" Margin="10,0,0,0" VerticalAlignment="Bottom" Text="{Binding TemperatureHigh,StringFormat='High: \{0:N2\}'}" />
+							<TextBlock FontSize="16" Margin="20,0,0,0" VerticalAlignment="Bottom" Text="{Binding Percipitation,StringFormat='Percip: \{0:N2\}'}" />
+						</StackPanel>
+					</Border>
+				</DataTemplate>
+			</ListBox.ItemTemplate>
+		</ListBox>-->
+
+		<!--Creating a master-detail view-->
+		<!--<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="200"/>
+			<ColumnDefinition />
+		</Grid.ColumnDefinitions>
+
+		<ListBox ItemsSource="{Binding}" FontSize="16" DisplayMemberPath="ProcessName" x:Name="_master"/>
+		<Grid Grid.Column="1" TextBlock.FontSize="16" DataContext="{Binding Path=SelectedItem, ElementName=_master}">
+			<Grid.RowDefinitions>
+				<RowDefinition Height="Auto" />
+				<RowDefinition Height="Auto" />
+				<RowDefinition Height="Auto" />
+				<RowDefinition Height="Auto" />
+				<RowDefinition Height="Auto" />
+			</Grid.RowDefinitions>
+			<TextBlock Margin="6" Text="{Binding ProcessName, StringFormat='Name: \{0\}'}" />
+			<TextBlock Grid.Row="1" Margin="6" Text="{Binding Id, StringFormat='ID: 0'}" />
+			<TextBlock Grid.Row="2" Margin="6" Text="{Binding PriorityClass, StringFormat='Priority Class: \{0\}'}" />
+			<TextBlock Grid.Row="3" Margin="6" Text="{Binding Threads.Count, StringFormat='Threads: 0'}" />
+			<TextBlock Grid.Row="4" Margin="6" Text="{Binding TotalProcessorTime, StringFormat='Processor Time: \{0:G\}'}" />
+		</Grid>-->
+
+		<!--Sorting and filtering bound collections-->
+		<Grid.RowDefinitions>
+			<RowDefinition />
+			<RowDefinition Height="Auto" />
+		</Grid.RowDefinitions>
+		<ListBox HorizontalContentAlignment="Stretch" ItemsSource="{Binding}">
+			<ListBox.ItemTemplate>
+				<DataTemplate>
+					<Border Margin="2" Padding="4" BorderBrush="Black" BorderThickness="1">
+						<StackPanel Orientation="Horizontal" TextBlock.FontSize="16">
+							<TextBlock Foreground="Black" FontWeight="Bold" Text="{Binding ProcessName}" />
+							<TextBlock Margin="10,0,0,0" Foreground="Blue" Text="{Binding Id, StringFormat='(\{0\})'}" />
+							<TextBlock Margin="20,0,0,0" Foreground="Red" Text="{Binding  Threads.Count,  StringFormat='Threads:  \{0\}'}" />
+						</StackPanel>
+					</Border>
+				</DataTemplate>
+			</ListBox.ItemTemplate>
+		</ListBox>
+		<StackPanel Grid.Row="1" Orientation="Horizontal" Margin="4" TextBlock.FontSize="14">
+			<TextBlock Text="Sort by" VerticalAlignment="Center"/>
+			<ComboBox Width="150" Margin="6,0,0,0" x:Name="_sortField" SelectedIndex="0" 
+					  ItemsSource="{StaticResource sortFields}" 
+					  DisplayMemberPath="DisplayName" 
+					  SelectedValuePath="PropertyName">
+			</ComboBox>
+			<CheckBox Margin="10,0,0,0" Content="Ascending" VerticalAlignment="Center" IsChecked="true" x:Name="_ascending"/>
+			<Button Margin="4,0,0,0" Content="Sort" Click="OnSort"/>
+			<TextBox Margin="10,0,0,0" x:Name="_filterText" Width="120" />
+			<Button Margin="4,0,0,0" Content="Filter" Click="OnFilter"/>
+		</StackPanel>
 
 	</Grid>
 </Window>
