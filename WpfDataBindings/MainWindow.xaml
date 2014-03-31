@@ -117,7 +117,7 @@
 		</Grid>-->
 
 		<!--Sorting and filtering bound collections-->
-		<Grid.RowDefinitions>
+		<!--<Grid.RowDefinitions>
 			<RowDefinition />
 			<RowDefinition Height="Auto" />
 		</Grid.RowDefinitions>
@@ -145,7 +145,32 @@
 			<Button Margin="4,0,0,0" Content="Sort" Click="OnSort"/>
 			<TextBox Margin="10,0,0,0" x:Name="_filterText" Width="120" />
 			<Button Margin="4,0,0,0" Content="Filter" Click="OnFilter"/>
-		</StackPanel>
+		</StackPanel>-->
 
+		<!--Grouping Data-->
+		<ListBox ItemsSource="{Binding}" HorizontalContentAlignment="Stretch">
+			<ListBox.ItemTemplate>
+				<DataTemplate>
+					<UniformGrid Rows="1" Columns="2">
+						<TextBlock  Text="{Binding  ProcessName}"  />
+						<TextBlock Text="{Binding Id, StringFormat=ID: \{0\}}" />
+					</UniformGrid>
+				</DataTemplate>
+			</ListBox.ItemTemplate>
+
+			<ListBox.GroupStyle>
+				<GroupStyle>
+					<GroupStyle.HeaderTemplate>
+						<DataTemplate>
+							<Border BorderBrush="Red" BorderThickness="2" Background="White" Margin="2">
+								<TextBlock Text="{Binding Name, StringFormat=Priority: {0} ,Converter={StaticResource MyConverter}}" 
+										   FontSize="16" FontWeight="Bold" Margin="4" />
+							</Border>
+						</DataTemplate>
+					</GroupStyle.HeaderTemplate>
+				</GroupStyle>
+			</ListBox.GroupStyle>
+
+		</ListBox>
 	</Grid>
 </Window>

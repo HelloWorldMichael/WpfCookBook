@@ -33,6 +33,8 @@
 				<JolinLib:SortField DisplayName="# Threads" PropertyName="Threads.Count" />
 			</JolinLib:SortFieldList>
 
+			<JolinLib:EnableRaisingEventsConvertercs x:Key="MyConverter"/>
+			
 		</ResourceDictionary>
 	</Application.Resources>
 </Application>

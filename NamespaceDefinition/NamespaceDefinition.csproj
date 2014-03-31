@@ -52,6 +52,7 @@
     <Compile Include="ForecastData\GeneralForecastToBrushConverter.cs" />
     <Compile Include="ObservableObject.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Sorting\EnableRaisingEventsConvertercs.cs" />
     <Compile Include="Sorting\SortField.cs" />
     <Compile Include="Sorting\SortFieldList.cs" />
   </ItemGroup>

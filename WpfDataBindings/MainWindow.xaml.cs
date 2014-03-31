@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Diagnostics;
+using System.Linq;
 using System.Windows;
 using System.Windows.Data;
 using NamespaceDefinition.Contacts;
@@ -45,7 +45,11 @@ namespace WpfDataBindings
 
 			//_days.ItemsSource = Enumerable.Range(1, 10);
 
-			DataContext = Process.GetProcesses();
+			var processes = Process.GetProcesses().Where(CanAccess);
+			DataContext = processes;
+			var view = CollectionViewSource.GetDefaultView(processes);
+			view.GroupDescriptions.Add(new PropertyGroupDescription("PriorityClass"));
+			view.GroupDescriptions.Add(new PropertyGroupDescription("EnableRaisingEvents"));
 		}
 
 		private void OnChange(object sender, RoutedEventArgs e)
@@ -78,21 +82,35 @@ namespace WpfDataBindings
 			DataContext = data;
 		}
 
-		private void OnSort(object sender, RoutedEventArgs e)
-		{
-			var view = CollectionViewSource.GetDefaultView(DataContext);
-			view.SortDescriptions.Clear();
-			if (_sortField.SelectedValue != null)
-				view.SortDescriptions.Add(new SortDescription((string)_sortField.SelectedValue, _ascending.IsChecked == true ? ListSortDirection.Ascending : ListSortDirection.Descending));
-		}
+		//private void OnSort(object sender, RoutedEventArgs e)
+		//{
+		//	var view = CollectionViewSource.GetDefaultView(DataContext);
+		//	view.SortDescriptions.Clear();
+		//	if (_sortField.SelectedValue != null)
+		//		view.SortDescriptions.Add(new SortDescription((string)_sortField.SelectedValue, _ascending.IsChecked == true ? ListSortDirection.Ascending : ListSortDirection.Descending));
+		//}
 
-		private void OnFilter(object sender, RoutedEventArgs e)
+		//private void OnFilter(object sender, RoutedEventArgs e)
+		//{
+		//	var view = CollectionViewSource.GetDefaultView(DataContext);
+		//	if (string.IsNullOrWhiteSpace(_filterText.Text))
+		//		view.Filter = null;
+		//	else
+		//		view.Filter = obj => ((Process)obj).ProcessName.IndexOf(_filterText.Text, StringComparison.InvariantCultureIgnoreCase) > -1;
+		//}
+
+		public static bool CanAccess(Process process)
 		{
-			var view = CollectionViewSource.GetDefaultView(DataContext);
-			if (string.IsNullOrWhiteSpace(_filterText.Text))
-				view.Filter = null;
-			else
-				view.Filter = obj => ((Process)obj).ProcessName.IndexOf(_filterText.Text, StringComparison.InvariantCultureIgnoreCase) > -1;
+			try
+			{
+				var h = process.Handle;
+				return true;
+			}
+			catch
+			{
+				Trace.WriteLine(string.Format("Process Name: {0}.", process.ProcessName));
+				return false;
+			}
 		}
 	}
 }
