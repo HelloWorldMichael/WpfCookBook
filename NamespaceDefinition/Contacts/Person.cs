@@ -1,6 +1,4 @@
-﻿using System.ComponentModel;
-
-namespace NamespaceDefinition.Contacts
+﻿namespace NamespaceDefinition.Contacts
 {
 	public class Person : ObservableObject
 	{
