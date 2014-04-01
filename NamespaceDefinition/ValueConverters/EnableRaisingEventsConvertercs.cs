@@ -2,7 +2,7 @@
 using System.Globalization;
 using System.Windows.Data;
 
-namespace NamespaceDefinition.Sorting
+namespace NamespaceDefinition.ValueConverters
 {
 	public class EnableRaisingEventsConvertercs : IValueConverter
 	{

@@ -148,7 +148,7 @@
 		</StackPanel>-->
 
 		<!--Grouping Data-->
-		<ListBox ItemsSource="{Binding}" HorizontalContentAlignment="Stretch">
+		<!--<ListBox ItemsSource="{Binding}" HorizontalContentAlignment="Stretch">
 			<ListBox.ItemTemplate>
 				<DataTemplate>
 					<UniformGrid Rows="1" Columns="2">
@@ -171,6 +171,33 @@
 				</GroupStyle>
 			</ListBox.GroupStyle>
 
-		</ListBox>
+		</ListBox>-->
+
+		<!--Multiple Bindings-->
+		<Grid.RowDefinitions>
+			<RowDefinition />
+			<RowDefinition Height="Auto" />
+			<RowDefinition Height="Auto" />
+			<RowDefinition Height="Auto" />
+		</Grid.RowDefinitions>
+
+
+		<Rectangle Stroke="Black" StrokeThickness="1" Margin="4" >
+
+			<Rectangle.Fill>
+				<MultiBinding Converter="{StaticResource RgbConverter}">
+					<Binding Path="Value" ElementName="_red" />
+					<Binding Path="Value" ElementName="_green" />
+					<Binding Path="Value" ElementName="_blue" />
+				</MultiBinding>
+			</Rectangle.Fill>
+
+		</Rectangle>
+
+
+		<Slider Minimum="0" Maximum="255" Margin="4" x:Name="_red" Grid.Row="1" />
+		<Slider Minimum="0" Maximum="255" Margin="4" x:Name="_green" Grid.Row="2" />
+		<Slider Minimum="0" Maximum="255" Margin="4" x:Name="_blue" Grid.Row="3" />
+
 	</Grid>
 </Window>

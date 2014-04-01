@@ -35,6 +35,8 @@
 
 			<JolinLib:EnableRaisingEventsConvertercs x:Key="MyConverter"/>
 			
+			<JolinLib:RgbConverter x:Key="RgbConverter"/>
+			
 		</ResourceDictionary>
 	</Application.Resources>
 </Application>
