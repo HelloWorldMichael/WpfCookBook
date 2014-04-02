@@ -98,6 +98,10 @@
       <Project>{e04f5602-9655-48fb-a973-3205ec7ff3c9}</Project>
       <Name>NamespaceDefinition</Name>
     </ProjectReference>
+    <ProjectReference Include="..\WpfResources\WpfResources.csproj">
+      <Project>{77995a92-ca18-4e2d-8333-03cd1df14050}</Project>
+      <Name>WpfResources</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

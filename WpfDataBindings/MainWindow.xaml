@@ -174,7 +174,7 @@
 		</ListBox>-->
 
 		<!--Multiple Bindings-->
-		<Grid.RowDefinitions>
+		<!--<Grid.RowDefinitions>
 			<RowDefinition />
 			<RowDefinition Height="Auto" />
 			<RowDefinition Height="Auto" />
@@ -182,7 +182,7 @@
 		</Grid.RowDefinitions>
 
 
-		<Rectangle Stroke="Black" StrokeThickness="1" Margin="4" >
+		<Rectangle Stroke="Black" StrokeThickness="1" Margin="4">
 
 			<Rectangle.Fill>
 				<MultiBinding Converter="{StaticResource RgbConverter}">
@@ -197,7 +197,29 @@
 
 		<Slider Minimum="0" Maximum="255" Margin="4" x:Name="_red" Grid.Row="1" />
 		<Slider Minimum="0" Maximum="255" Margin="4" x:Name="_green" Grid.Row="2" />
-		<Slider Minimum="0" Maximum="255" Margin="4" x:Name="_blue" Grid.Row="3" />
+		<Slider Minimum="0" Maximum="255" Margin="4" x:Name="_blue" Grid.Row="3" />-->
+
+		<TreeView ItemsSource="{Binding}">
+			<TreeView.ItemTemplate>
+				<HierarchicalDataTemplate ItemsSource="{Binding Modules}">
+					<StackPanel Orientation="Horizontal" Margin="2">
+						<Image Source="/WpfResources;component/Images/pink.jpg" Width="32" Height="32"/>
+						<TextBlock Text="{Binding ProcessName}" Margin="5,0,0,0" FontWeight="Bold" FontSize="16" />
+						<TextBlock Margin="5,0,0,0" Text="{Binding Id, StringFormat=(\{0\})}" FontSize="16" />
+					</StackPanel>
+					<HierarchicalDataTemplate.ItemTemplate>
+						<DataTemplate>
+							<StackPanel Orientation="Horizontal" Margin="2">
+								<TextBlock Text="{Binding ModuleName}" FontSize="14" FontWeight="Bold" />
+								<TextBlock Margin="5,0,0,0" Text="{Binding FileName, StringFormat=(\{0\})}"
+								           FontSize="12" VerticalAlignment="Center" />
+							</StackPanel>
+						</DataTemplate>
+					</HierarchicalDataTemplate.ItemTemplate>
+				</HierarchicalDataTemplate>
+			</TreeView.ItemTemplate>
+		</TreeView>
+
 
 	</Grid>
 </Window>

@@ -47,9 +47,9 @@ namespace WpfDataBindings
 
 			var processes = Process.GetProcesses().Where(CanAccess);
 			DataContext = processes;
-			var view = CollectionViewSource.GetDefaultView(processes);
-			view.GroupDescriptions.Add(new PropertyGroupDescription("PriorityClass"));
-			view.GroupDescriptions.Add(new PropertyGroupDescription("EnableRaisingEvents"));
+			//var view = CollectionViewSource.GetDefaultView(processes);
+			//view.GroupDescriptions.Add(new PropertyGroupDescription("PriorityClass"));
+			//view.GroupDescriptions.Add(new PropertyGroupDescription("EnableRaisingEvents"));
 		}
 
 		private void OnChange(object sender, RoutedEventArgs e)
