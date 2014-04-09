@@ -11,7 +11,7 @@
 			set
 			{
 				_age = value;
-				OnPropertyChanged("Age");
+				SetProperty<int>(ref _age, value);
 			}
 		}
 

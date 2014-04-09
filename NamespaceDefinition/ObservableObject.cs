@@ -1,15 +1,23 @@
-﻿using System.ComponentModel;
+﻿using System.Collections.Generic;
+using System.ComponentModel;
+using System.Runtime.CompilerServices;
 
 namespace NamespaceDefinition
 {
 	public abstract class ObservableObject : INotifyPropertyChanged
 	{
 		public event PropertyChangedEventHandler PropertyChanged;
-		protected virtual void OnPropertyChanged(string propName)
+
+
+		protected void SetProperty<T>(ref T field, T value, [CallerMemberName] string propName = null)
 		{
-			var pc = PropertyChanged;
-			if (pc != null)
-				pc(this, new PropertyChangedEventArgs(propName));
+			if (!EqualityComparer<T>.Default.Equals(field, value))
+			{
+				field = value;
+				var pc = PropertyChanged;
+				if (pc != null)
+					pc(this, new PropertyChangedEventArgs(propName));
+			}
 		}
 	}
 }
