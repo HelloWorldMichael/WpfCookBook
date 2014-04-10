@@ -46,6 +46,8 @@
     <Compile Include="Books\PublicBook.cs" />
     <Compile Include="Commands\Commands.cs" />
     <Compile Include="Commands\ImageData.cs" />
+    <Compile Include="Commands\OpenImageFileCommand.cs" />
+    <Compile Include="Commands\ZoomCommand.cs" />
     <Compile Include="Contacts\CompanyContact.cs" />
     <Compile Include="Contacts\Person.cs" />
     <Compile Include="DataTemplateSelectors\ProcessTemplateSelector.cs" />

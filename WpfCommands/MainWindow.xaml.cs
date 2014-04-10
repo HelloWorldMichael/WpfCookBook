@@ -25,7 +25,8 @@ namespace WpfCommands
 			};
 			if (dlg.ShowDialog() == true)
 			{
-				_image = new ImageData(dlg.FileName);
+				_image = new ImageData();
+				_image.ImagePath = dlg.FileName;
 				DataContext = _image;
 			}
 		}
