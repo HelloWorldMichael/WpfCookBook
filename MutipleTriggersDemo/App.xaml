@@ -1,0 +1,25 @@
+﻿<Application x:Class="MutipleTriggersDemo.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+		<Style x:Key="hoverStyle" TargetType="Button">
+			<Style.Triggers>
+				<MultiTrigger>
+					<MultiTrigger.Conditions>
+						<Condition Property="IsDefault" Value="True"/>
+						<Condition Property="IsMouseOver" Value="True"/>
+					</MultiTrigger.Conditions>
+					
+					<Setter Property="Background" Value="Red"/>
+					<Setter Property="Effect">
+						<Setter.Value>
+							<DropShadowEffect/>
+						</Setter.Value>
+					</Setter>
+					
+				</MultiTrigger>
+			</Style.Triggers>
+		</Style>
+    </Application.Resources>
+</Application>

@@ -1,0 +1,14 @@
+﻿<Window x:Class="MutipleTriggersDemo.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="350" Width="525">
+
+	<StackPanel Orientation="Vertical">
+		<Button HorizontalAlignment="Center" Margin="20" Padding="6" x:Name="theButton" Style="{StaticResource ResourceKey=hoverStyle}">
+			<TextBlock Text="Move mouse over me" FontSize="25" FontWeight="Bold"/>
+		</Button>
+
+		<CheckBox Content="Default button" IsChecked="{Binding ElementName=theButton, Path=IsDefault,Mode=TwoWay}" Margin="10"/>
+
+	</StackPanel>
+</Window>
